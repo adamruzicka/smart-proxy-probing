@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
 
   gem.files            = Dir['lib/smart-proxy-probing.rb', 'LICENSE',
                              '{lib/smart-proxy-probing,settings.d}/**/*',
-                             'bundler.plugins.d/probing.rb']
+                             'bundler.d/probing.rb']
   gem.extra_rdoc_files = ['LICENSE']
   gem.test_files       = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths    = ["lib"]
