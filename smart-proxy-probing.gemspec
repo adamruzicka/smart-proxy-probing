@@ -21,5 +21,5 @@ Gem::Specification.new do |gem|
   gem.require_paths    = ["lib"]
   gem.license = 'GPLv3'
 
-  gem.add_runtime_dependency('smart_proxy_dynflow', '< 0.3.0', '>= 0.1.0')
+  gem.add_runtime_dependency('smart_proxy_dynflow', '~> 0.1')
 end
