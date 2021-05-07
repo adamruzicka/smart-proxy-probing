@@ -8,12 +8,13 @@ module Proxy
         require 'smart_proxy_dynflow'
         require 'smart-proxy-probing/version'
 
-        begin
-          require 'smart_proxy_dynflow_core'
-          require 'foreman-probing-core'
-        rescue LoadError; end
-      end
+        require 'dynflow'
 
+        require 'smart_proxy_dynflow/runner'
+        require 'smart-proxy-probing/actions'
+        require 'smart-proxy-probing/neighbour_cache'
+        require 'smart-proxy-probing/probes'
+      end
     end
   end
 end

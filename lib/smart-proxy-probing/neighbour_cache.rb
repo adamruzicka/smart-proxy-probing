@@ -1,4 +1,4 @@
-module ForemanProbingCore
+module Proxy::Probing
   class NeighbourCache
     def initialize
       @cache = []
