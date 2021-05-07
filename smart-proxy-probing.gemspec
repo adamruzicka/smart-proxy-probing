@@ -21,7 +21,6 @@ Gem::Specification.new do |gem|
   gem.require_paths    = ["lib"]
   gem.license = 'GPLv3'
 
-  s.add_dependency('foreman-tasks-core', '~> 0.1')
-  s.add_dependency('ruby-nmap', '~> 0.9')
-  gem.add_runtime_dependency('smart_proxy_dynflow', '~> 0.1')
+  gem.add_dependency('ruby-nmap', '~> 0.9')
+  gem.add_runtime_dependency('smart_proxy_dynflow', '~> 0.5')
 end

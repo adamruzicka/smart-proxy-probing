@@ -1,16 +1,17 @@
-module ForemanProbingCore
+module Proxy::Probing
   module Probes
-    class ICMP < Nmap
+    class UDP < Nmap
       def self.scan_type
-        'icmp'
+        'udp'
       end
 
       def self.humanized_scan_type
-        'ICMP'
+        _('UDP')
       end
 
       def nmap_flags
-        %w(-sn)
+        # Use UDP scan with service detection
+        %w(-sU -sV)
       end
     end
   end

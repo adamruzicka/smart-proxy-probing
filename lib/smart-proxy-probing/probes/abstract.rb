@@ -1,4 +1,4 @@
-module ForemanProbingCore
+module Proxy::Probing
   module Probes
     class Abstract
       class << self

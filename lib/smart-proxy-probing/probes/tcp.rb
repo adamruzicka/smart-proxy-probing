@@ -1,4 +1,4 @@
-module ForemanProbingCore
+module Proxy::Probing
   module Probes
     class TCP < Nmap
       def self.scan_type

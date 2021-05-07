@@ -1,9 +1,9 @@
-require 'foreman_tasks_core/runner'
-require 'foreman_tasks_core/runner/command_runner'
+require 'smart_proxy_dynflow/runner'
+require 'smart_proxy_dynflow/runner/command_runner'
 
-module ForemanProbingCore
+module Proxy::Probing
   module Actions
-    class CommandRunner < ForemanTasksCore::Runner::CommandRunner
+    class CommandRunner < Proxy::Dynflow::Runner::CommandRunner
       def initialize(*command)
         super
         @command = command
@@ -14,7 +14,7 @@ module ForemanProbingCore
       end
     end
 
-    class UseProbe < ForemanTasksCore::Runner::Action
+    class UseProbe < Proxy::Dynflow::Action::Runner
       def initiate_runner
         if input.fetch('options', {})['subnet_discovery']
           input['local_addresses'] = get_local_addrs
@@ -52,11 +52,11 @@ module ForemanProbingCore
       def probe_class
         case input[:scan_type].downcase
         when 'tcp'
-          ForemanProbingCore::Probes::TCP
+          Proxy::Probing::Probes::TCP
         when 'udp'
-          ForemanProbingCore::Probes::UDP
+          Proxy::Probing::Probes::UDP
         when 'icmp'
-          ForemanProbingCore::Probes::ICMP
+          Proxy::Probing::Probes::ICMP
         else
           raise "Unknown scan_type '#{input[:scan_type]}'"
         end

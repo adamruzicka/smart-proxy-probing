@@ -2,7 +2,7 @@ require 'ipaddr'
 require 'open3'
 require 'nmap/xml'
 
-module ForemanProbingCore
+module Proxy::Probing
   module Probes
     class Nmap < Abstract
       def command
@@ -78,7 +78,7 @@ module ForemanProbingCore
       end
 
       def lookup_addresses(addresses)
-        @neighbour_cache ||= ForemanProbingCore::NeighbourCache.new.tap(&:cache!)
+        @neighbour_cache ||= Proxy::Probing::NeighbourCache.new.tap(&:cache!)
         ips = addresses.map { |address| address[:addr] }
         macs = ips.map do |ip|
           @neighbour_cache.mac_for_ip(ip)
