@@ -1,4 +1,4 @@
-module ForemanProbingCore
+module Proxy::Probing
   module Probes
     require 'foreman_probing_core/probes/abstract'
     require 'foreman_probing_core/probes/nmap'

@@ -1,7 +1,7 @@
 require 'foreman_tasks_core/runner'
 require 'foreman_tasks_core/runner/command_runner'
 
-module ForemanProbingCore
+module Proxy::Probing
   module Actions
     class CommandRunner < ForemanTasksCore::Runner::CommandRunner
       def initialize(*command)
@@ -52,11 +52,11 @@ module ForemanProbingCore
       def probe_class
         case input[:scan_type].downcase
         when 'tcp'
-          ForemanProbingCore::Probes::TCP
+          Proxy::Probing::Probes::TCP
         when 'udp'
-          ForemanProbingCore::Probes::UDP
+          Proxy::Probing::Probes::UDP
         when 'icmp'
-          ForemanProbingCore::Probes::ICMP
+          Proxy::Probing::Probes::ICMP
         else
           raise "Unknown scan_type '#{input[:scan_type]}'"
         end
